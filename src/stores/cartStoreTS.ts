@@ -15,32 +15,41 @@ interface CartItem extends Product {
 
 export const cartStore = reactive({
 
-  cart: [] as CartItem[],
-  
+  state: {
+    cart: [] as CartItem[],
+  },
+
+  cartItems(): CartItem[] {
+    return this.state.cart
+  },
+
   cartTotal(): number {
-    return this.cart.reduce(
-      (total: number, item: { qty: number }) => total + item.qty, 0
-    )
+    return this.state.cart.length
   },
 
   cartTotalPrice(): number {
-    return this.cart.reduce(
-      (total: number, item: { total: number }) => total + item.total, 0
-    )
+    return this.state.cart.reduce(sumTotal, 0)
   },
   
   productInCart(id: string): CartItem | undefined {
-    return this.cart.find(
-      (product: { id: string }) => product.id === id
-    )
+    return this.state.cart.find((p: { id: string }) => p.id === id)
   },
 
   addToCart(product: Product): void {
+    
     const inCart = this.productInCart(product.id)
+    
     if (inCart) {
-      inCart.qty++; inCart.total = inCart.price * inCart.qty
+      inCart.qty++
+      inCart.total = inCart.price * inCart.qty
+
     } else {
-      this.cart.push({...product, qty: 1, total: product.price})
+      this.state.cart.push({...product, qty: 1, total: product.price})
     }
   }
 })
+
+
+function sumTotal(total: number, product: CartItem): number {
+  return total + product.total
+}

@@ -27,7 +27,7 @@ interface CartItem extends Product {
   total: number
 }
 
-const cart: Ref<CartItem[]> = computed<CartItem[]>(() => cartStore.cart)
+const cart: Ref<CartItem[]> = computed<CartItem[]>(() => cartStore.cartItems())
 
 
 </script>
