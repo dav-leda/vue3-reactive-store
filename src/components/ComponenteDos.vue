@@ -13,9 +13,10 @@
 <script setup lang="ts">
 
 import { computed } from 'vue'
-import { cartStore } from '../stores/cartStoreTS'
+import { cartStore } from '../stores/cartStore'
 
 const total = computed<number>(() => cartStore.cartTotal())
 const totalPrice = computed<number>(() => cartStore.cartTotalPrice())
 
 </script>
+../stores/cartStore

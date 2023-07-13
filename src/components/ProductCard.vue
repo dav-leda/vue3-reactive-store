@@ -15,7 +15,7 @@
 
 import { computed } from 'vue'
 import type { PropType } from 'vue'
-import { cartStore } from '../stores/cartStoreTS'
+import { cartStore } from '../stores/cartStore'
 
 interface Product {
   id: string
@@ -34,4 +34,4 @@ const total = computed(() => cartStore.cartTotal())
 
 const addToCart = () => cartStore.addToCart(product)
 
-</script>
+</script>../stores/cartStore

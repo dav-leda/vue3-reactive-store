@@ -50,6 +50,7 @@ export const cartStore = reactive({
 })
 
 
+// Reducer function
 function sumTotal(total: number, product: CartItem): number {
   return total + product.total
 }

@@ -14,7 +14,7 @@
 
 import type { Ref } from 'vue'
 import { computed } from 'vue'
-import { cartStore } from '../stores/cartStoreTS'
+import { cartStore } from '../stores/cartStore'
 
 interface Product {
   id: string
@@ -31,3 +31,4 @@ const cart: Ref<CartItem[]> = computed<CartItem[]>(() => cartStore.cartItems())
 
 
 </script>
+../stores/cartStore
