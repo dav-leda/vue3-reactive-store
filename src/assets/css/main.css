@@ -1,0 +1,42 @@
+
+@import "./reset.css";
+
+@import "./atomic.css";
+
+@import "./semantic.css";
+
+
+
+#app {
+  margin: auto;
+  width: 100%;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-vue {
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid;
+  min-height: 95vh;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+  margin: 6rem auto;
+}
+

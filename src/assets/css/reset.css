@@ -1,0 +1,57 @@
+
+
+
+:root {
+  --color-background: snow;
+  --color-border: rgba(60, 60, 60, 0.1);
+  --color-border-hover: rgba(60, 60, 60, 0.3);
+  --color-text: rgb(44, 62, 80);
+  --font-size: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #222;
+    --color-border: rgba(84, 84, 84, 0.65);
+    --color-border-hover: rgba(84, 84, 84, 0.65);
+    --color-text: snow;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul, ol {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.5;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-size: var(--font-size);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
